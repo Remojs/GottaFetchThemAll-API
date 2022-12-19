@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const PORT = process.env.PORT || 9000;
 require('./database/conexion');
 const app = express();
-const pokemonController = require('./controllers/personaController')
+const pokemonController = require('./controllers/pokemon.controller')
 
 //Middelwares
 app.use(express.json());
@@ -20,13 +20,19 @@ app.get('/datos', async (req, res) => {
     });
 });
 
+app.get('/personas', async (req, res) => {
+    res.json({
+        personas: await personaController.findAll()
+    });
+});
+
 app.post('/crear', async (req, res) => {
-    const { id, name, image, first_type, second_type, ability, height, weight, stats } = req.body;
-    console.log(`${id} - ${name} - ${image} - ${first_type} - ${second_type} - ${ability} - ${height} - ${weight} - ${stats}`);
+    const { nombre, apellido, dni } = req.body;
+    console.log(`${nombre} - ${apellido} - ${dni}`);
 
-    await pokemonController.create(req.body)
+    await personaController.create(req.body)
 
-    res.send('MERN SYSTEM: Pokemon Creado con exito')
+    res.send('Persona Creada')
 })
 
 app.delete('/:id', (req, res) => {

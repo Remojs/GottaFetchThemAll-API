@@ -1,18 +1,18 @@
-const Pokemon = require('../models/personaModel');
+const Persona = require('../models/persona.model');
 
-class pokemonControllers {
+class personaControllers {
 
     async findAll(){
         try {
-            return await Pokemon.find().sort({ ID : 1 }).lean();
+            return await Persona.find().lean();
         } catch (error) {
             throw error
         }
     }
 
-    async create(pokemon){
+    async create(persona){
         try {
-            return await Pokemon.create(pokemon);
+            return await Persona.create(persona);
         } catch (error) {
             throw error
         }
@@ -20,7 +20,7 @@ class pokemonControllers {
 
     async delete(id){
         try {
-            return await Pokemon.findByIdAndDelete(id);
+            return await Persona.findByIdAndDelete(id);
         } catch (error) {
             throw error
         }
@@ -28,11 +28,11 @@ class pokemonControllers {
 
     async update(id){
         try {
-            return await Pokemon.findByIdAndUpdate(id);
+            return await Persona.findByIdAndUpdate(id);
         } catch (error) {
             throw error
         }
     }
 }
 
-module.exports = new pokemonControllers;
+module.exports = new personaControllers;

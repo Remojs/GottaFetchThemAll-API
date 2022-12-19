@@ -37,27 +37,33 @@ const pokemonSchema = new Schema({
     stats: {
         hp: {
             type: 'number',
-            required: true
+            required: false,
+            default: 0
         },
         attack: {
             type: 'number',
-            required: true
+            required: false,
+            default: 0
         },
         defense: {
             type: 'number',
-            required: true
+            required: false,
+            default: 0
         },
         special_attack: {
             type: 'number',
-            required: true
+            required: false,
+            default: 0
         },
         special_defense: {
             type: 'number',
-            required: true
+            required: false,
+            default: 0
         },
         speed: {
             type: 'number',
-            required: true
+            required: false,
+            default: 0
         },
     },
 });
