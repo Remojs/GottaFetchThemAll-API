@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 9000;
 require('./database/conexion');
 const app = express();
 const pokemonController = require('./controllers/pokemon.controller')
+const personaController = require('./controllers/persona.controller')
 
 //Middelwares
 app.use(express.json());
@@ -22,7 +23,7 @@ app.get('/datos', async (req, res) => {
 
 app.get('/personas', async (req, res) => {
     res.json({
-        personas: await personaController.findAll()
+        personas: await personaController.findAll()  
     });
 });
 
