@@ -130,3 +130,4 @@ Ejemplo de respuesta:
 ```
 
 ¡Disfruta explorando la GottaFetchThemAll API para obtener información emocionante sobre tus Pokémon favoritos!
+-- link del Deploy: https://gottafetchthemall.onrender.com/pokedex
