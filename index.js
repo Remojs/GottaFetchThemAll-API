@@ -8,14 +8,14 @@ const PORT = process.env.PORT || 9000
 
 const app = express();
 
-//Middelwares
-app.use("/", router);
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+// Middelwares
 app.use(cors());
 app.use(morgan('common'));
+app.use("/", router);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
     console.log(`MERN trabajando en el Puerto ${PORT}`);
 });
 
