@@ -1,6 +1,6 @@
 # GottaFetchThemAll API
 
-La **GottaFetchThemAll API** es una API que te permite acceder a información detallada sobre los Pokémon, con los datos basicos necesarios para optimizar la innecesaria carga masiva de datos irrelevantes en las masivas apis de pokemon. Utiliza varias rutas para recuperar datos específicos sobre Pokémon basados en diferentes criterios de búsqueda. Ya sea que estés buscando un Pokémon por su nombre, tipo, estadísticas o habilidades, esta API te brinda acceso a la rica información de la Pokédex.
+La **GottaFetchThemAll API** es una API que te permite acceder a información detallada sobre los 1017 Pokémon existentes, con los datos basicos necesarios para optimizar la innecesaria carga masiva de datos irrelevantes en las masivas apis de pokemon. Utiliza varias rutas para recuperar datos específicos sobre Pokémon basados en diferentes criterios de búsqueda. Ya sea que estés buscando un Pokémon por su nombre, tipo, estadísticas o habilidades, esta API te brinda acceso a la rica información de la Pokédex.
 
 # Rutas Disponibles
 
