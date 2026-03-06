@@ -9,15 +9,20 @@ const STAT_MAP = {
     speed: 'stats.speed'
 };
 
-const getAllByMinStat = async (stat) => {
+const getByStatRange = async (stat, min, max) => {
     try {
         const selectedStat = STAT_MAP[stat];
         if (!selectedStat) throw new Error('Invalid stat');
-        const pokes = await pokemonSchema.find().sort({ [selectedStat]: 1 }).lean();
+
+        const filter = {};
+        if (min !== undefined) filter[selectedStat] = { ...filter[selectedStat], $gte: parseInt(min) };
+        if (max !== undefined) filter[selectedStat] = { ...filter[selectedStat], $lte: parseInt(max) };
+
+        const pokes = await pokemonSchema.find(filter).sort({ [selectedStat]: 1 }).lean();
         return pokes;
     } catch (error) {
         throw error;
     }
 }
 
-module.exports = getAllByMinStat
+module.exports = getByStatRange

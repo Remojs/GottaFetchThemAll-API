@@ -1,12 +1,13 @@
 const pokemonSchema = require('../models/pokemon.model')
 
-const getAllPokemons = async (name) => {
-    try{ 
-        pokes = await pokemonSchema.find({name: name}).exec()
-        return pokes
+const getByName = async (name) => {
+    try {
+        const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const pokes = await pokemonSchema.find({ name: { $regex: escaped, $options: 'i' } }).sort({ ID: 1 }).lean();
+        return pokes;
     } catch (error) {
-        console.log(error.message) 
+        throw error;
     }
 }
 
-module.exports = getAllPokemons
+module.exports = getByName

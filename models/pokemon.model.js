@@ -68,6 +68,12 @@ const pokemonSchema = new Schema({
     },
 });
 
-const Pokemon = mongoose.model('pokemon', pokemonSchema)
+pokemonSchema.index({ ID: 1 }, { unique: true });
+pokemonSchema.index({ name: 1 });
+pokemonSchema.index({ first_type: 1 });
+pokemonSchema.index({ second_type: 1 });
+pokemonSchema.index({ ability: 1 });
+
+const Pokemon = mongoose.model('pokemon', pokemonSchema);
 
 module.exports = Pokemon;

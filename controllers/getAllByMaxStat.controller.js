@@ -1,18 +1,22 @@
 const pokemonSchema = require('../models/pokemon.model')
 
+const STAT_MAP = {
+    hp: 'stats.hp',
+    attack: 'stats.attack',
+    defense: 'stats.defense',
+    special_attack: 'stats.special_attack',
+    special_defense: 'stats.special_defense',
+    speed: 'stats.speed'
+};
+
 const getAllByMaxStat = async (stat) => {
-    try{ 
-        let selectedStat
-        if(stat === 'hp'){selectedStat = 'stats.hp'}
-        else if(stat === 'attack'){selectedStat = 'stats.attack'}
-        else if(stat === 'defense'){selectedStat = 'stats.defense'}
-        else if(stat === 'special_attack'){selectedStat = 'stats.special_attack'}
-        else if(stat === 'special_defense'){selectedStat = 'stats.special_defense'}
-        else if(stat === 'speed'){selectedStat = 'stats.speed'}
-        pokes = await pokemonSchema.find().sort({ [selectedStat]: -1 })
-        return pokes
+    try {
+        const selectedStat = STAT_MAP[stat];
+        if (!selectedStat) throw new Error('Invalid stat');
+        const pokes = await pokemonSchema.find().sort({ [selectedStat]: -1 }).lean();
+        return pokes;
     } catch (error) {
-        console.log(error.message) 
+        throw error;
     }
 }
 

@@ -1,11 +1,13 @@
 const pokemonSchema = require('../models/pokemon.model')
 
 const getById = async (id) => {
-    try{ 
-        pokes = await pokemonSchema.find({ID: id}).exec()
-        return pokes
+    try {
+        const numId = parseInt(id);
+        if (isNaN(numId)) throw new Error('ID must be a valid number');
+        const pokes = await pokemonSchema.find({ ID: numId }).lean();
+        return pokes;
     } catch (error) {
-        console.log(error.message) 
+        throw error;
     }
 }
 
