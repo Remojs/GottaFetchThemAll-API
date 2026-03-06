@@ -1,30 +1,6 @@
 # GottaFetchThemAll API
 
-La **GottaFetchThemAll API** es una REST API que provee datos esenciales de los 1010 Pokémon de las 9 generaciones, optimizada para no cargar información irrelevante. Construida con **Node.js + Express + MongoDB (Mongoose)**.
-
----
-
-## Stack técnico
-
-| Tecnología | Versión |
-|---|---|
-| Node.js | >= 18 |
-| Express | ^4.18 |
-| Mongoose | ^6.8 |
-| MongoDB Atlas | — |
-
----
-
-## Variables de entorno
-
-Crear un archivo `.env` en la raíz del proyecto:
-
-```
-MONGOATLAS=mongodb+srv://<usuario>:<password>@<cluster>.mongodb.net/<db>
-PORT=9000
-```
-
----
+La **GottaFetchThemAll API** es una REST API que provee datos esenciales de los 1025 Pokémon de las 9 generaciones, optimizada para no cargar información irrelevante. 
 
 ## Modelo de datos — Pokemon
 
