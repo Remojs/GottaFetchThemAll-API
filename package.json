@@ -1,8 +1,11 @@
 {
-  "name": "y",
-  "version": "1.0.0",
-  "description": "",
+  "name": "gottafetchthemall-api",
+  "version": "2.0.0",
+  "description": "Pokemon REST API with Node.js, Express and MongoDB",
   "main": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
@@ -14,11 +17,10 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "faker": "^6.6.6",
     "mongoose": "^6.8.0",
-    "morgan": "^1.10.0",
-    "multer": "^1.4.5-lts.1",
-    "nodemon": "^3.0.1",
-    "path": "^0.12.7"
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
