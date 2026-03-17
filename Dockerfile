@@ -11,6 +11,7 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 ENV NODE_ENV=production
-EXPOSE 9000
+ENV PORT=3001
+EXPOSE 3001
 
 CMD ["node", "index.js"]
